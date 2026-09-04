@@ -1,0 +1,15 @@
+{
+  "name": "estudio-scaultos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Estudio de carrossel do ScaultOS — painel local, motor Claude Code, publica direto no Instagram/Facebook dos clientes.",
+  "main": "servidor/index.js",
+  "scripts": {
+    "start": "node servidor/index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "latest",
+    "express": "^4.19.2",
+    "multer": "^2.3.0"
+  }
+}

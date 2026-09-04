@@ -1,0 +1,12 @@
+{
+  "slug": "scault",
+  "nome": "Scault",
+  "tipo": "agencia",
+  "motor": "estilo-editorial",
+  "paleta": null,
+  "fontes": { "display": "Inter Tight", "body": "Inter" },
+  "instagram": { "handle": "@scault.mkt", "sufixo_env": null },
+  "identidade_fonte": "identidade/scault-design-system.md",
+  "logo": "identidade/LOGO SCAULT.svg",
+  "observacoes": "Marca da própria agência — peça interna, proposta, site próprio. É a marca nativa do motor estilo-editorial, sem override de paleta."
+}

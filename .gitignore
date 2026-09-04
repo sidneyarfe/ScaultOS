@@ -1,0 +1,57 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Claude Code (sessões locais, não devem ir pro repo)
+.claude/settings.local.json
+.claude/projects/
+.claude/sessions/
+.claude/shell-snapshots/
+.claude/telemetry/
+.claude/file-history/
+.claude/backups/
+
+# Dependências
+node_modules/
+
+# Chaves de API — NUNCA versionar (.env.example é o modelo, esse vai)
+.env
+.env.*
+!.env.example
+
+# Cache de previews dos bancos de imagem (/carrossel — descartável)
+.fotos/
+.pexels/
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Drop zone do usuário (só o README vai versionado)
+dados/*
+!dados/README.md
+
+# Site da Scault: repositório próprio em site/.git — não versionar aqui
+/site/
+
+# Claude Ads (setup-profile classificado como confidential — IDs de conta de clientes)
+.claude-ads/
+
+# studio.scault — credenciais das contas extras do Claude Code (uma pasta de
+# CLAUDE_CONFIG_DIR por conta, criada pelo seletor de conta do painel)
+studio-scault/servidor/contas-claude/
+
+# studio.scault — app de desktop (app/): runtime local do launcher e PNGs
+# intermediários do build do ícone. O perfil da janela do Chrome fica em
+# %LOCALAPPDATA%\studio.scault, fora do repo. studio.ico e painel/icone-*.png
+# vão versionados; o resto é derivado/local.
+studio-scault/app/_servidor.pid
+studio-scault/app/_ultima-execucao.log
+studio-scault/app/_icone/png/
+
+# Deploy da VPS (contem IP do servidor) — nao vai pro repo publico
+sincronizar-vps.sh

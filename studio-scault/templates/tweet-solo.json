@@ -1,0 +1,31 @@
+{
+  "tipo": "fiel",
+  "origem": "nativo do ScaultOS — formato tweet/thread do X (card solto), ver .claude/skills/carrossel/tweet-thread/TWEET-THREAD.md",
+  "formato": "4:5",
+  "fontes": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\">",
+  "css": "* { margin:0; padding:0; box-sizing:border-box; }\n\n.slide {\n  width: 1080px;\n  height: 1350px;\n  background: #000000;\n  font-family: 'Inter', sans-serif;\n  overflow: hidden;\n  position: relative;\n  padding: 100px 76px 0;\n}\n\n.header { display:flex; align-items:center; gap:27px; margin-bottom:52px; }\n.avatar { width:110px; height:110px; border-radius:50%; overflow:hidden; background:#2a3a4a; flex-shrink:0; }\n.avatar img { width:100%; height:100%; object-fit:cover; display:block; }\n.user-info { display:flex; flex-direction:column; gap:4px; }\n.name-row { display:flex; align-items:center; gap:10px; }\n.name { font-size:36px; font-weight:700; color:#E7E9EA; line-height:1.2; }\n.verified svg { width:31px; height:31px; display:block; flex-shrink:0; }\n.vpath { fill:#1D9BF0; }\n.handle { font-size:31px; color:#71767B; line-height:1.2; font-weight:400; }\n\n.content { font-size:46px; line-height:1.45; color:#E7E9EA; font-weight:400; letter-spacing:-0.01em; }\n.content p { margin:0 0 36px; }\n.content p:last-child { margin-bottom:0; }\n.content b { font-weight:700; }\n\n.post-image { margin-top:44px; width:100%; height:600px; border-radius:22px; overflow:hidden; border:1px solid #2F3E4E; background:#000; }\n.post-image img { width:100%; height:100%; display:block; object-fit:cover; object-position:center; }",
+  "slides": [
+    {
+      "papel": "card único",
+      "notas": "post solto, não-sequência — uma ideia fechada em si, header com avatar/nome/@ da marca (data-perfil) e foto relacionada ao tema",
+      "html": "<div class=\"slide\" data-name=\"card-01\">\n  <div class=\"header\">\n    <div class=\"avatar\"><img data-perfil=\"avatar\" src=\"avatar.jpg\" alt=\"\"></div>\n    <div class=\"user-info\">\n      <div class=\"name-row\"><span class=\"name\" data-perfil=\"nome\">Nome da marca</span></div>\n      <span class=\"handle\" data-perfil=\"handle\">@marca</span>\n    </div>\n  </div>\n  <div class=\"content\">\n    <p>A maior parte do orçamento de anúncio não se perde no criativo. Se perde no formulário que ninguém preenche até o fim.</p>\n    <p><b>Três campos a menos no formulário já muda a conversão de forma visível.</b></p>\n  </div>\n  <div class=\"post-image\"><img src=\"foto-01.jpg\" alt=\"\"></div>\n</div>"
+    }
+  ],
+  "ficha_visual": {
+    "formato": "4:5",
+    "fontes_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\">",
+    "tipografia": {
+      "titulo": { "familia": "Inter", "peso": 700, "caixa": "none", "tamanho_px": 36, "entrelinha": 1.2, "kerning_em": 0, "alinhamento": "left", "uso": "nome do autor no header" },
+      "corpo": { "familia": "Inter", "peso": 400, "caixa": "none", "tamanho_px": 46, "entrelinha": 1.45, "kerning_em": -0.01, "alinhamento": "left" },
+      "outras": [
+        { "nome": "handle", "familia": "Inter", "peso": 400, "caixa": "none", "tamanho_px": 31, "entrelinha": 1.2, "kerning_em": 0, "alinhamento": "left", "uso": "@handle abaixo do nome" }
+      ]
+    },
+    "cores": { "fundo": "#000000", "texto": "#E7E9EA", "destaque": "#1D9BF0" },
+    "tratamento_foto": "Foto full-width dentro do card, altura fixa de 600px (object-fit:cover) — maior que na versão em sequência porque é o único elemento visual do post. Sem overlay, sem filtro.",
+    "moldura": { "logo": false, "contador": false, "rodape": false, "regua": false, "tag": false, "observacao": "Sem moldura de marca — imita um print real do X." },
+    "perfil": { "existe": true, "campos": ["avatar", "nome", "handle"], "onde": "topo do card (header)", "observacao": "Única porta de entrada da marca — preenchida pelo servidor via data-perfil." },
+    "ancora": "Header fixo a 100px do topo. Bloco de texto logo abaixo, largura total menos padding lateral de 76px. Imagem 44px abaixo do texto, altura fixa 600px.",
+    "observacoes": "Versão solta (1 card) do formato tweet/thread — pra ideia fechada em si, não sequência. Ver tweet-thread/TWEET-THREAD.md pra regras de escrita e escolha de foto."
+  }
+}

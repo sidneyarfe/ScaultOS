@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>studio.scault</title>
+<!-- favicon inline: sem isto o Chrome pede /favicon.ico e leva 404 em todo
+     carregamento, sujando o console com um erro que não é erro nenhum -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B0E'/%3E%3Crect x='7' y='6' width='12' height='20' rx='2' fill='%238DCCFF'/%3E%3Crect x='21' y='6' width='4' height='20' rx='2' fill='%23A3C5CE' opacity='.5'/%3E%3C/svg%3E">
+<!-- ícone raster: o modo --app do Chrome (app/) usa este pra barra de tarefas;
+     o SVG acima o Windows ignora fora da aba -->
+<link rel="icon" type="image/png" sizes="256x256" href="/icone-256.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0B0B0E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Biblioteca de ícones: um <symbol> por ícone, usado com <use href="#i-...">.
+     Substituiu os emoji do painel — emoji renderiza com a fonte do sistema,
+     muda de desenho a cada plataforma e não aceita currentColor. -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-texto" viewBox="0 0 24 24"><path d="M4 6V4h16v2M12 4v16M8 20h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-audio" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-imagem" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="8.5" cy="9.5" r="1.6" fill="currentColor"/><path d="M4 17l5-5 4 4 3-2 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-destaque" viewBox="0 0 24 24"><path d="M12 3l2.2 5.4L20 9.6l-4 4 1 6-5-2.8L7 19.6l1-6-4-4 5.8-1.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ia" viewBox="0 0 24 24"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z" fill="currentColor"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z" fill="currentColor" opacity=".75"/></symbol>
+  <symbol id="i-esq" viewBox="0 0 24 24"><path d="M4 6h16M4 11h10M4 16h14M4 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-centro" viewBox="0 0 24 24"><path d="M4 6h16M7 11h10M5 16h14M8 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-dir" viewBox="0 0 24 24"><path d="M4 6h16M10 11h10M6 16h14M12 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-cadeado-aberto" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 7.5-2" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-mover" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M12 3l-2.5 2.5M12 3l2.5 2.5M12 21l-2.5-2.5M12 21l2.5-2.5M3 12l2.5-2.5M3 12l2.5 2.5M21 12l-2.5-2.5M21 12l-2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-olho-fechado" viewBox="0 0 24 24"><path d="M3 3l18 18M10.6 10.7a2.6 2.6 0 0 0 3.6 3.6M6.7 6.9C4 8.6 2 12 2 12s3.6 6 10 6c1.8 0 3.4-.5 4.7-1.2M20.5 15.3C21.5 14 22 12 22 12s-3.6-6-10-6c-.8 0-1.6.1-2.3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-duplicar" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-lixo" viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-salvar" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 3v6h7V3M8 21v-7h8v7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desfazer" viewBox="0 0 24 24"><path d="M9 8L4 12l5 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12h9a6 6 0 0 1 0 12h-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sombra" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="currentColor" opacity=".35"/><rect x="4" y="4" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-render" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-publicar" viewBox="0 0 24 24"><path d="M21 3L10.5 13.5M21 3l-7 18-3.5-7.5L3 10z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pasta" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-exportar" viewBox="0 0 24 24"><path d="M12 15V3M8 7l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 14v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-menos" viewBox="0 0 24 24"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-ajustar" viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-seta-esq" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-seta-dir" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-seta-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M8 8l4-4 4 4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-camadas" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 13l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4M12 17h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-config" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 13.6c.1-.5.1-1.1.1-1.6s0-1.1-.1-1.6l2-1.5-2-3.4-2.3.9c-.8-.6-1.7-1.1-2.7-1.5L14 2h-4l-.4 2.9c-1 .3-1.9.8-2.7 1.5l-2.3-.9-2 3.4 2 1.5c-.1.5-.1 1.1-.1 1.6s0 1.1.1 1.6l-2 1.6 2 3.4 2.3-1c.8.6 1.7 1.1 2.7 1.5L10 22h4l.4-2.9c1-.3 1.9-.8 2.7-1.5l2.3 1 2-3.4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+  <symbol id="i-editar" viewBox="0 0 24 24"><path d="M4 20l.9-4L16.5 4.4a1.5 1.5 0 0 1 2.1 0l1 1a1.5 1.5 0 0 1 0 2.1L8 19.1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 6.4l3.1 3.1" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-paleta" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.3-.5-.8-.5-1.3 0-1.1.9-2 2-2h2a3 3 0 0 0 3-3c0-4.4-4-8.4-8-8.4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7.5" cy="10.5" r="1.3" fill="currentColor"/><circle cx="11" cy="7" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8" r="1.3" fill="currentColor"/></symbol>
+</svg>
+
+<div class="app">
+
+  <header class="topo">
+    <div class="wordmark">studio<span>.</span>scault</div>
+    <nav>
+      <button data-view="criar" class="ativo">Criar</button>
+      <button data-view="acervo">Acervo</button>
+      <button data-view="templates">Templates</button>
+    </nav>
+    <div class="topo-direita">
+      <span class="pill-sujo" id="pill-sujo" hidden><svg class="ico"><use href="#i-alerta"></use></svg>alterações não salvas</span>
+      <div class="status-ambiente" id="status-ambiente">conectando…</div>
+      <button class="btn-icone" id="btn-config" title="Configurações — modelo de IA e conta do Claude Code">
+        <svg class="ico"><use href="#i-config"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= CRIAR ================= -->
+    <section id="view-criar" class="view">
+
+      <!-- ---------- coluna esquerda: briefing ---------- -->
+      <aside class="painel-lateral" id="col-briefing">
+        <div class="secao-titulo">
+          <span>Briefing</span>
+          <button class="btn-icone" id="btn-recolher-briefing" title="Recolher"><svg class="ico"><use href="#i-seta-esq"></use></svg></button>
+        </div>
+
+        <div class="field">
+          <label>Marca</label>
+          <div class="linha-marca">
+            <div class="seletor-marca" id="seletor-marca">
+              <button class="seletor-marca-botao" id="btn-abrir-marcas">
+                <span class="avatar" id="avatar-marca-atual"></span>
+                <span class="seletor-marca-nome" id="nome-marca-atual">carregando…</span>
+                <svg class="ico"><use href="#i-seta-baixo"></use></svg>
+              </button>
+              <div class="seletor-marca-lista" id="lista-marcas" hidden></div>
+            </div>
+            <button class="btn-icone" id="btn-editar-marca-atual" title="Editar identidade da marca atual">
+              <svg class="ico"><use href="#i-editar"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div id="aviso-marca"></div>
+
+        <div class="tabs" id="tabs-entrada">
+          <button data-tab="texto" class="ativo"><svg class="ico"><use href="#i-texto"></use></svg>Texto</button>
+          <button data-tab="link"><svg class="ico"><use href="#i-link"></use></svg>Link</button>
+          <button data-tab="audio"><svg class="ico"><use href="#i-audio"></use></svg>Áudio</button>
+          <button data-tab="print"><svg class="ico"><use href="#i-imagem"></use></svg>Print</button>
+        </div>
+
+        <div class="aba-conteudo" data-aba="texto">
+          <div class="field">
+            <label>Tema / briefing</label>
+            <textarea id="briefing" placeholder="Descreve o tema, o ângulo, o que não pode faltar…"></textarea>
+          </div>
+        </div>
+
+        <div class="aba-conteudo" data-aba="link" hidden>
+          <div class="field">
+            <label>Link (artigo, matéria)</label>
+            <input type="url" id="input-link" placeholder="https://…">
+          </div>
+          <button class="btn btn--line btn-sm btn-largo" id="btn-ingerir-link">Ler link</button>
+          <div class="status-linha" id="status-link"></div>
+        </div>
+
+        <div class="aba-conteudo" data-aba="audio" hidden>
+          <button class="btn btn--line btn-sm btn-largo" id="btn-gravar"><svg class="ico"><use href="#i-audio"></use></svg><span>Gravar</span></button>
+          <div class="field">
+            <label>ou envie um arquivo</label>
+            <input type="file" id="input-audio" accept="audio/*,video/*">
+          </div>
+          <div class="status-linha" id="status-audio"></div>
+        </div>
+
+        <div class="aba-conteudo" data-aba="print" hidden>
+          <div class="field">
+            <label>Print / imagem de referência</label>
+            <input type="file" id="input-print" accept="image/*">
+          </div>
+          <div class="status-linha" id="status-print"></div>
+        </div>
+
+        <div class="field">
+          <label>Objetivo</label>
+          <input type="text" id="objetivo" list="lista-objetivos" placeholder="ex: gerar autoridade, vendas, engajamento…" value="gerar autoridade">
+          <datalist id="lista-objetivos">
+            <option value="gerar autoridade">
+            <option value="vendas">
+            <option value="engajamento">
+            <option value="seguidores">
+          </datalist>
+        </div>
+
+        <div class="field">
+          <label>Prompt — o que você quer nesse post</label>
+          <textarea id="prompt-extra" placeholder="Instrução específica pra este post: ângulo, o que não pode faltar, o que evitar…" style="min-height:64px"></textarea>
+        </div>
+
+        <div class="field">
+          <label>Slides</label>
+          <div class="segmentado" id="seg-slides">
+            <button data-v="1">1<small>imagem única</small></button>
+            <button data-v="3">3<small>rápido</small></button>
+            <button data-v="5">5<small>direto</small></button>
+            <button data-v="7" class="ativo">7<small>completo</small></button>
+            <button data-v="10">10<small>aprofundado</small></button>
+            <button data-v="15">15<small>guia</small></button>
+            <button data-v="20">20<small>completão</small></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Formato</label>
+          <div class="segmentado seg-2col" id="seg-formato">
+            <button data-v="4:5" class="ativo">Feed<small>4:5</small></button>
+            <button data-v="9:16">Stories<small>9:16</small></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Template <span class="label-leve">(opcional)</span></label>
+          <button class="btn btn--line btn-sm btn-largo" id="btn-abrir-templates">
+            <span id="template-escolhido-label">Automático</span><svg class="ico"><use href="#i-seta-baixo"></use></svg>
+          </button>
+        </div>
+
+        <details class="mais-opcoes">
+          <summary>Mais opções</summary>
+          <div class="field">
+            <label>Chamada de ação no último slide</label>
+            <div class="segmentado seg-sm seg-2col" id="seg-cta">
+              <button data-v="1" class="ativo">Sim</button>
+              <button data-v="0">Não</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>Mostrar no rodapé</label>
+            <div class="segmentado seg-sm" id="seg-mostrar">
+              <button data-v="perfil" class="ativo">Perfil e @</button>
+              <button data-v="logo">Só logo</button>
+              <button data-v="ambos">Os dois</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>Modelo de IA <span class="label-leve">(só pra este post)</span></label>
+            <div class="segmentado seg-2col" id="seg-modelo">
+              <button data-v="" class="ativo">Padrão<small>da assinatura</small></button>
+              <button data-v="claude-sonnet-5">Sonnet 5<small>equilibrado</small></button>
+              <button data-v="claude-opus-5">Opus 5<small>mais profundo</small></button>
+              <button data-v="claude-haiku-4-5-20251001">Haiku 4.5<small>mais rápido</small></button>
+            </div>
+          </div>
+        </details>
+
+        <button class="btn btn--fill" id="btn-gerar">Gerar carrossel</button>
+
+        <div class="barra-progresso-wrap" id="barra-progresso-wrap" hidden>
+          <div class="barra-progresso"><div class="barra-progresso-fill" id="barra-progresso-fill"></div></div>
+          <div class="barra-progresso-label" id="barra-progresso-label">iniciando…</div>
+          <button class="log-toggle" id="btn-log-toggle" type="button" aria-expanded="true">
+            <svg class="ico"><use href="#i-seta-baixo"></use></svg><span>o que a IA está fazendo</span>
+          </button>
+          <div class="log-ia" id="log-ia-gerar" aria-live="polite"></div>
+        </div>
+        <div id="status-geracao"></div>
+      </aside>
+
+      <div class="briefing-recolhido" id="briefing-recolhido" hidden>
+        <button class="btn-icone" id="btn-abrir-briefing" title="Abrir briefing"><svg class="ico"><use href="#i-seta-dir"></use></svg></button>
+        <span>BRIEFING</span>
+      </div>
+
+      <!-- ---------- centro: canvas ---------- -->
+      <div class="canvas-area">
+
+        <div class="canvas-topbar">
+          <div class="canvas-topbar-nome" id="nome-post">nenhum post aberto</div>
+          <button class="btn-icone" id="btn-sair-post" title="Fechar post e começar do zero" hidden><svg class="ico"><use href="#i-fechar"></use></svg></button>
+          <div class="canvas-topbar-acoes">
+            <button class="btn-chip" id="btn-trava-area" title="Área segura: elementos não saem da margem" hidden>
+              <svg class="ico"><use href="#i-cadeado"></use></svg><span>área segura</span>
+            </button>
+            <div class="zoom-ctrl" id="zoom-ctrl" hidden>
+              <button data-zoom="-" title="Diminuir"><svg class="ico"><use href="#i-menos"></use></svg></button>
+              <span id="zoom-label">ajustar</span>
+              <button data-zoom="+" title="Aumentar"><svg class="ico"><use href="#i-mais"></use></svg></button>
+              <button data-zoom="fit" title="Ajustar à tela"><svg class="ico"><use href="#i-ajustar"></use></svg></button>
+            </div>
+            <button class="btn btn--line btn-sm" id="btn-desfazer-editar" title="Desfazer todas as alterações não salvas" hidden><svg class="ico"><use href="#i-desfazer"></use></svg>Desfazer</button>
+            <button class="btn btn--line btn-sm" id="btn-rerenderizar" hidden><svg class="ico"><use href="#i-render"></use></svg>Renderizar</button>
+            <button class="btn btn--fill btn-sm" id="btn-salvar-editar" hidden><svg class="ico"><use href="#i-salvar"></use></svg>Salvar alterações</button>
+          </div>
+        </div>
+
+        <div class="preview-wrap" id="preview-wrap">
+          <div class="preview-vazio" id="preview-vazio">
+            Escreve o briefing do lado e clica em <strong>Gerar carrossel</strong>.
+            O motor roda na tua assinatura do Claude Code — sem custo por criação.
+          </div>
+          <div class="canvas-frame-wrap" id="canvas-frame-wrap" hidden>
+            <iframe id="canvas-frame" title="Slide editável" scrolling="no" sandbox="allow-same-origin allow-scripts"></iframe>
+          </div>
+          <div class="canvas-dica" id="canvas-dica" hidden>clica no texto pra editar · arrasta um bloco pra mover · setas pra ajustar 1px</div>
+
+          <div class="barra-selecao" id="barra-selecao" hidden>
+            <button data-acao="destaque" title="Marcar o trecho selecionado como destaque"><svg class="ico"><use href="#i-destaque"></use></svg>destaque</button>
+            <span class="sep"></span>
+            <button data-acao="menor" title="Diminuir a fonte">A−</button>
+            <span class="valor" id="sel-tamanho">—</span>
+            <button data-acao="maior" title="Aumentar a fonte">A+</button>
+            <span class="sep"></span>
+            <button data-acao="esq" title="Alinhar à esquerda"><svg class="ico"><use href="#i-esq"></use></svg></button>
+            <button data-acao="centro" title="Centralizar"><svg class="ico"><use href="#i-centro"></use></svg></button>
+            <button data-acao="dir" title="Alinhar à direita"><svg class="ico"><use href="#i-dir"></use></svg></button>
+            <span class="sep"></span>
+            <label class="cor-btn" title="Cor do texto"><span>A</span><input type="color" id="sel-cor"></label>
+            <span class="sep"></span>
+            <button data-acao="sombra-menor" title="Diminuir a sombra do texto"><svg class="ico"><use href="#i-sombra"></use></svg>−</button>
+            <span class="valor" id="sel-sombra" title="Sombra no texto — ajuda a ler sobre foto">—</span>
+            <button data-acao="sombra-maior" title="Aumentar a sombra do texto">+</button>
+            <span class="sep"></span>
+            <button data-acao="ia" title="Reescrever com IA"><svg class="ico"><use href="#i-ia"></use></svg>IA</button>
+          </div>
+        </div>
+
+        <!-- barra flutuante de IA — um elemento só, que substitui os dois campos
+             separados (post inteiro / só o slide): o toggle "Este slide · Carrossel
+             inteiro" decide o escopo, a mesma pergunta serve pros dois. -->
+        <div class="barra-ia" id="barra-ia" hidden>
+          <div class="barra-ia-escopo" id="barra-ia-escopo">
+            <button type="button" data-escopo="slide" class="ativo" title="Aplica só no slide aberto agora">Este slide</button>
+            <button type="button" data-escopo="post" title="Aplica em todos os slides do post">Carrossel inteiro</button>
+          </div>
+          <input type="text" id="barra-ia-input" placeholder="Peça uma mudança de texto, design ou layout com IA…">
+          <button class="barra-ia-enviar" id="barra-ia-enviar" title="Aplicar" disabled>
+            <svg class="ico"><use href="#i-ia"></use></svg>
+          </button>
+        </div>
+        <div class="status-linha barra-ia-status" id="status-barra-ia"></div>
+
+        <div class="trilha-wrap">
+          <div class="trilha" id="trilha-slides"></div>
+          <div class="trilha-acoes" id="trilha-acoes" hidden>
+            <button class="btn btn--line btn-sm" id="btn-duplicar-slide" title="Duplicar slide"><svg class="ico"><use href="#i-duplicar"></use></svg>Duplicar</button>
+            <button class="btn btn--line btn-sm btn--danger" id="btn-apagar-slide" title="Apagar slide"><svg class="ico"><use href="#i-lixo"></use></svg>Apagar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- coluna direita: editor ---------- -->
+      <aside class="painel-lateral direita" id="painel-editar" hidden>
+        <div class="tabs tabs-4">
+          <button data-tab-editar="editar" class="ativo">Editar</button>
+          <button data-tab-editar="design">Design</button>
+          <button data-tab-editar="camadas">Camadas</button>
+          <button data-tab-editar="legenda">Legenda</button>
+        </div>
+
+        <div class="aba-editar" data-tab-editar-conteudo="editar">
+          <p class="ajuda">
+            Clica direto no texto da prévia pra editar. Selecionar um trecho abre a barra de
+            destaque, tamanho e cor.
+          </p>
+          <div id="campos-editar"></div>
+        </div>
+
+        <div class="aba-editar" data-tab-editar-conteudo="design" hidden>
+          <div id="campos-design"></div>
+        </div>
+
+        <div class="aba-editar" data-tab-editar-conteudo="camadas" hidden>
+          <div id="lista-camadas"></div>
+        </div>
+
+        <div class="aba-editar" data-tab-editar-conteudo="legenda" hidden>
+          <div class="field">
+            <label>Legenda do post</label>
+            <textarea id="campo-legenda" style="min-height:220px"></textarea>
+          </div>
+          <div class="linha-botoes">
+            <button class="btn btn--line btn-sm" id="btn-salvar-legenda">Salvar legenda</button>
+            <button class="btn btn--line btn-sm" id="btn-reescrever-legenda"><svg class="ico"><use href="#i-ia"></use></svg>Reescrever</button>
+          </div>
+          <div class="status-linha" id="status-legenda"></div>
+        </div>
+
+        <div class="rodape-editor">
+          <button class="btn btn--line btn-sm btn-largo" id="btn-abrir-banco"><svg class="ico"><use href="#i-imagem"></use></svg>Trocar a foto do slide</button>
+          <hr>
+          <div class="field">
+            <label>Arquivos do post</label>
+            <div class="caminho-arquivos" id="caminho-arquivos">abre ou gera um post pra ver onde os PNGs ficam.</div>
+            <div class="caminho-resumo" id="caminho-resumo"></div>
+          </div>
+          <div class="linha-botoes">
+            <button class="btn btn--line btn-sm" id="btn-abrir-pasta" disabled><svg class="ico"><use href="#i-pasta"></use></svg>Abrir a pasta</button>
+            <button class="btn btn--line btn-sm" id="btn-exportar" disabled><svg class="ico"><use href="#i-exportar"></use></svg>Exportar…</button>
+          </div>
+          <hr>
+          <div class="field">
+            <label>Publicar em</label>
+            <div class="segmentado seg-sm seg-2col" id="seg-canal">
+              <button data-v="instagram" class="ativo">Instagram</button>
+              <button data-v="facebook">Facebook</button>
+            </div>
+          </div>
+          <div class="conta-destino" id="conta-destino">
+            <div class="ajuda">abre um post pra ver a conta de destino.</div>
+          </div>
+          <button class="btn btn--fill" id="btn-publicar"><svg class="ico"><use href="#i-publicar"></use></svg>Publicar</button>
+          <div class="status-linha" id="status-publicar"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ================= ACERVO ================= -->
+    <section id="view-acervo" class="view" hidden>
+      <div class="grade" id="grade-acervo"></div>
+    </section>
+
+    <!-- ================= TEMPLATES ================= -->
+    <section id="view-templates" class="view" hidden>
+      <div class="grade" id="grade-templates"></div>
+      <aside class="painel-lateral direita">
+        <h3 class="titulo-painel">Modelar um carrossel de referência</h3>
+        <p class="ajuda">
+          Arrasta os prints do carrossel que você quer modelar — um por slide, na ordem.
+          A IA reproduz o <strong>visual inteiro</strong>: fonte, peso, caixa, escala, cor,
+          âncora, tratamento de foto e a moldura que existir (ou a ausência dela). Depois
+          renderiza e compara com o print, eixo a eixo, até bater.
+        </p>
+        <p class="ajuda">
+          Peça feita com este template sai idêntica à referência — o que muda é o texto e a
+          foto. A identidade da marca só entra se a referência tiver bloco de perfil
+          (avatar, nome, @). As imagens de referência ficam guardadas só pra reconferência,
+          nunca entram num post.
+        </p>
+
+        <div class="dropzone" id="dropzone-extrator" tabindex="0">
+          <svg class="ico ico-grande"><use href="#i-upload"></use></svg>
+          <strong>Solta os prints aqui</strong>
+          <span>ou clica pra escolher · PNG/JPG · até 20 slides</span>
+          <input type="file" id="input-extrator-print" accept="image/*" multiple hidden>
+        </div>
+
+        <div class="tiras-referencia" id="tiras-referencia"></div>
+
+        <div class="field" id="campo-nome-template" hidden>
+          <label>Nome do template</label>
+          <input type="text" id="nome-template" placeholder="ex: editorial-foto-cheia">
+        </div>
+
+        <button class="btn btn--fill" id="btn-extrair" disabled>Modelar referência</button>
+
+        <div class="barra-progresso-wrap" id="barra-extrator-wrap" hidden>
+          <div class="barra-progresso"><div class="barra-progresso-fill" id="barra-extrator-fill"></div></div>
+          <div class="barra-progresso-label" id="barra-extrator-label"></div>
+          <button class="log-toggle" id="btn-log-toggle-extrator" type="button" aria-expanded="true">
+            <svg class="ico"><use href="#i-seta-baixo"></use></svg><span>o que a IA está fazendo</span>
+          </button>
+          <div class="log-ia" id="log-ia-extrator" aria-live="polite"></div>
+        </div>
+        <div class="status-linha" id="status-extrator"></div>
+      </aside>
+    </section>
+
+  </main>
+</div>
+
+<!-- ================= DIÁLOGO (aviso / confirmar / pedir texto) =================
+     Substitui alert/confirm/prompt do navegador. Os nativos aparecem com o
+     chrome do Chrome ("localhost:3000 diz"), fora da identidade, e no caso do
+     alert de erro despejavam o stack trace inteiro do subprocesso na tela. -->
+<div class="modal-fundo" id="modal-dialogo" hidden>
+  <div class="modal modal-estreito" role="dialog" aria-modal="true" aria-labelledby="dialogo-titulo">
+    <div class="modal-head">
+      <h2 id="dialogo-titulo">Confirmar</h2>
+      <button id="dialogo-fechar" title="Fechar"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="dialogo-linha">
+        <span class="dialogo-icone" id="dialogo-icone"></span>
+        <p class="dialogo-texto" id="dialogo-texto"></p>
+      </div>
+      <details class="dialogo-detalhe" id="dialogo-detalhe" hidden>
+        <summary>ver detalhe técnico</summary>
+        <pre id="dialogo-detalhe-texto"></pre>
+      </details>
+      <div class="field" id="dialogo-campo" hidden>
+        <input type="text" id="dialogo-input" autocomplete="off">
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--line" id="dialogo-cancelar">Cancelar</button>
+      <button class="btn btn--fill" id="dialogo-ok">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: ESCOLHER TEMPLATE ================= -->
+<div class="modal-fundo" id="modal-templates" hidden>
+  <div class="modal modal-largo">
+    <div class="modal-head">
+      <h2>Escolher template</h2>
+      <button id="fechar-modal-templates"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="grade-templates-modal" id="grade-templates-modal"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: BANCO DE IMAGENS ================= -->
+<div class="modal-fundo" id="modal-imagens" hidden>
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Banco de imagens</h2>
+      <button id="fechar-modal-imagens"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <input type="text" id="busca-imagem" placeholder="Buscar (ex: escritório de advocacia)">
+      </div>
+      <div class="abas-imagem">
+        <button data-fonte="banco" class="ativo">Pexels / Unsplash — licenciado</button>
+        <button data-fonte="google">Google Imagens — não licenciado</button>
+        <button data-fonte="marca">Da marca — já no sistema</button>
+      </div>
+      <div class="grade-imagens" id="grade-imagens"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--line" id="btn-buscar-imagem">Buscar</button>
+      <button class="btn btn--fill" id="btn-usar-imagem">Usar neste slide</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: EXPORTAR =================
+     A saída que não é publicação: copiar a peça pronta pra uma pasta de fora
+     do projeto (aprovação do cliente, WhatsApp, agendamento na mão). -->
+<div class="modal-fundo" id="modal-exportar" hidden>
+  <div class="modal modal-estreito">
+    <div class="modal-head">
+      <h2>Exportar post</h2>
+      <button id="fechar-modal-exportar" title="Fechar"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="resumo-exportar" id="resumo-exportar"></div>
+
+      <div class="field">
+        <label>Pasta de destino</label>
+        <div class="linha-destino">
+          <input type="text" id="destino-exportar" placeholder="C:\Users\sidne\OneDrive\Área de Trabalho" autocomplete="off" spellcheck="false">
+          <button class="btn btn--line btn-sm" id="btn-escolher-destino"><svg class="ico"><use href="#i-pasta"></use></svg>Escolher…</button>
+        </div>
+      </div>
+      <div class="chips-rapidos" id="destinos-recentes" hidden></div>
+
+      <div class="field">
+        <label>O que vai junto</label>
+        <div class="lista-check" id="itens-exportar"></div>
+      </div>
+
+      <label class="check-linha"><input type="checkbox" id="exp-subpasta" checked><span>Criar uma subpasta com o nome do post</span></label>
+      <label class="check-linha"><input type="checkbox" id="exp-renomear"><span>Renomear os slides com o nome do post</span></label>
+
+      <div class="previa-caminho" id="previa-caminho"></div>
+      <div class="status-linha" id="status-exportar"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--line" id="btn-abrir-destino" hidden><svg class="ico"><use href="#i-pasta"></use></svg>Abrir a pasta</button>
+      <button class="btn btn--fill" id="btn-rodar-exportar"><svg class="ico"><use href="#i-exportar"></use></svg>Exportar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: REESCRITA DE TEXTO ================= -->
+<div class="modal-fundo" id="modal-ia" hidden>
+  <div class="modal modal-estreito">
+    <div class="modal-head">
+      <h2>Reescrever com IA</h2>
+      <button id="fechar-modal-ia"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label>Trecho atual</label>
+        <textarea id="ia-original" readonly style="min-height:72px"></textarea>
+      </div>
+      <div class="field">
+        <label>O que mudar</label>
+        <input type="text" id="ia-instrucao" placeholder="ex: mais curto, sem chavão, tom mais direto">
+      </div>
+      <div class="chips-rapidos" id="ia-atalhos">
+        <button data-i="Deixe mais curto, no máximo metade do tamanho.">encurtar</button>
+        <button data-i="Deixe mais forte e mais direto, sem chavão.">mais forte</button>
+        <button data-i="Reescreva num tom mais simples, como quem explica pra um cliente leigo.">simplificar</button>
+        <button data-i="Transforme em pergunta que abre curiosidade.">virar pergunta</button>
+      </div>
+      <div class="status-linha" id="status-ia"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--fill" id="btn-rodar-ia">Reescrever</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: CONFIGURAÇÕES ================= -->
+<div class="modal-fundo" id="modal-config" hidden>
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Configurações</h2>
+      <button id="fechar-modal-config"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="config-secao">
+        <div class="config-secao-titulo">Modelo de IA</div>
+        <p class="ajuda">
+          Usado em toda geração, reescrita e correção — a não ser que você escolha outro modelo
+          só pra um post específico, em "Mais opções" no formulário de Gerar.
+        </p>
+        <div class="segmentado seg-2col" id="seg-modelo-padrao">
+          <button data-v="">Padrão<small>da assinatura</small></button>
+          <button data-v="claude-sonnet-5">Sonnet 5<small>equilibrado</small></button>
+          <button data-v="claude-opus-5">Opus 5<small>mais profundo</small></button>
+          <button data-v="claude-haiku-4-5-20251001">Haiku 4.5<small>mais rápido</small></button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="config-secao">
+        <div class="config-secao-titulo">Conta do Claude Code</div>
+        <p class="ajuda">
+          Qual assinatura gera os posts. Trocar é 1 clique; uma conta nova pede login 1 vez só.
+        </p>
+        <div class="lista-contas" id="lista-contas"></div>
+        <button class="btn btn--line btn-sm btn-mini-largo" id="btn-nova-conta">+ Adicionar conta</button>
+
+        <div class="login-conta-wrap" id="login-conta-wrap" hidden>
+          <div class="log-ia" id="log-login-conta" aria-live="polite"></div>
+          <div class="status-linha" id="status-login-conta"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--line" id="fechar-modal-config-2">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: IDENTIDADE DA MARCA ================= -->
+<div class="modal-fundo" id="modal-identidade" hidden>
+  <div class="modal">
+    <div class="modal-head">
+      <h2>Identidade — <span id="identidade-nome-titulo"></span></h2>
+      <button id="fechar-modal-identidade"><svg class="ico"><use href="#i-fechar"></use></svg></button>
+    </div>
+    <div class="modal-body">
+
+      <div class="config-secao">
+        <div class="config-secao-titulo">Perfil</div>
+        <div class="identidade-avatar-linha">
+          <span class="avatar grande" id="identidade-avatar-preview"></span>
+          <div class="identidade-avatar-botoes">
+            <button class="btn btn--line btn-sm" id="btn-trocar-avatar"><svg class="ico"><use href="#i-upload"></use></svg>Trocar foto</button>
+            <input type="file" id="input-avatar-marca" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+            <span class="status-linha" id="status-avatar-marca"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Nome</label>
+          <input type="text" id="identidade-nome">
+        </div>
+        <div class="field">
+          <label>@ do Instagram</label>
+          <input type="text" id="identidade-handle" placeholder="@suamarca">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="config-secao">
+        <div class="config-secao-titulo"><svg class="ico"><use href="#i-paleta"></use></svg> Paleta de cores</div>
+        <p class="ajuda">Aplicada de verdade nas peças que usam o motor estilo-editorial; em marca de cliente fica cadastrada como referência. Deixe um campo em branco pra não sobrescrever a cor daquele token.</p>
+        <div class="paleta-tokens" id="paleta-tokens"></div>
+      </div>
+
+      <hr>
+
+      <div class="config-secao">
+        <div class="config-secao-titulo">Importar de uma referência</div>
+        <p class="ajuda">
+          Envie uma imagem (mede a cor de verdade, pixel a pixel) ou um manual de marca em
+          PDF/DOCX/TXT (lê o hex escrito no texto e a cor das páginas). Depois clique num campo de
+          cor acima pra escolher onde ela entra, e clique numa sugestão abaixo pra preencher.
+        </p>
+        <div class="field">
+          <input type="file" id="input-paleta-referencia" accept="image/*,.pdf,.docx,.txt,.md">
+        </div>
+        <div class="status-linha" id="status-paleta-referencia"></div>
+        <div class="paleta-candidatos" id="paleta-candidatos"></div>
+      </div>
+
+      <div class="status-linha" id="status-identidade"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn--line" id="fechar-modal-identidade-2">Cancelar</button>
+      <button class="btn btn--fill" id="btn-salvar-identidade">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

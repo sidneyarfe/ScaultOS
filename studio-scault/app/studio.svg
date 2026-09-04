@@ -1,0 +1,10 @@
+<!-- Ícone do studio.scault. Mesmo desenho do favicon do painel
+     (painel/index.html), escalado 8x pro canvas de 256:
+       fundo grafite arredondado + slide azul + slide seguinte espiando.
+     Fonte única do ícone: _icone/gerar.sh rasteriza este arquivo em
+     studio.ico (atalho) e painel/icone-*.png (aba / barra de tarefas). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#0B0B0E"/>
+  <rect x="56" y="48" width="96" height="160" rx="16" fill="#8DCCFF"/>
+  <rect x="168" y="48" width="32" height="160" rx="16" fill="#A3C5CE" opacity=".5"/>
+</svg>

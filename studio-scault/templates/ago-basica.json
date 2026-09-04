@@ -1,0 +1,143 @@
+{
+  "tipo": "fiel",
+  "formato": "4:5",
+  "fontes": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Bevan:wght@400;700&display=swap\" rel=\"stylesheet\">",
+  "css": "/* ===== pele — carrossel reforma tributária / arrendamento rural ===== */\n\n@import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@400;700&display=swap');\n\n.slide {\n  width: 1080px;\n  height: 1350px;\n  box-sizing: border-box;\n  overflow: hidden;\n  position: relative;\n  font-family: 'Baloo 2', sans-serif;\n}\n\n/* ---------- capa (slide 1): foto full-bleed + headline grotesca condensada ---------- */\n\n.slide-capa {\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n\n.bg-01 { background-color: #6A5033; }\n\n.overlay-top {\n  position: absolute;\n  inset: 0;\n  background-image: linear-gradient(\n    to bottom,\n    rgba(8, 10, 12, 0.5) 0%,\n    rgba(8, 10, 12, 0.2) 30%,\n    rgba(8, 10, 12, 0) 55%\n  );\n}\n\n.headline-wrap {\n  position: absolute;\n  top: 140px;\n  left: 97px;\n  right: 97px;\n  text-align: center;\n}\n\n.headline {\n  margin: 0;\n  font-family: 'Anton', sans-serif;\n  font-weight: 400;\n  text-transform: uppercase;\n  font-size: 48px;\n  line-height: 1.15;\n  letter-spacing: 0;\n  color: #FFFFFF;\n  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);\n}\n\n/* ---------- slides de papel (2,4,6,8): fundo bege com vinco, leitura corrida ---------- */\n\n.slide-paper {\n  background-color: #E9E5E2;\n  background-image:\n    linear-gradient(90deg, transparent 49.6%, rgba(20, 15, 10, 0.05) 50%, transparent 50.4%),\n    linear-gradient(0deg, transparent 38.6%, rgba(20, 15, 10, 0.045) 39%, transparent 39.4%),\n    radial-gradient(ellipse at 30% 70%, rgba(0, 0, 0, 0.03), transparent 60%);\n}\n\n.texto-paper {\n  position: absolute;\n  left: 97px;\n  right: 97px;\n  top: 300px;\n}\n\n.texto-paper--alto {\n  top: 150px;\n}\n\n.slide-paper .header-bloco {\n  color: #2E2C2A;\n}\n\n.slide-paper .paragrafo,\n.slide-paper .negrito {\n  color: #464544;\n}\n\n/* ---------- slides de foto com legenda (3,5,7,9,10): texto ancorado na base ---------- */\n\n.slide-foto {\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n\n.bg-03 { background-color: #59721E; }\n.bg-05 { background-color: #A98131; }\n.bg-07 { background-color: #425122; }\n.bg-09 { background-color: #563D1E; }\n.bg-10 { background-color: #462817; }\n\n.overlay-bottom {\n  position: absolute;\n  inset: 0;\n  background-image: linear-gradient(\n    to top,\n    rgba(0, 0, 0, 0.78) 0%,\n    rgba(0, 0, 0, 0.55) 25%,\n    rgba(0, 0, 0, 0.15) 55%,\n    rgba(0, 0, 0, 0) 75%\n  );\n}\n\n.texto-foto {\n  position: absolute;\n  left: 97px;\n  right: 97px;\n  bottom: 95px;\n}\n\n.slide-foto .header-bloco,\n.slide-foto .paragrafo,\n.slide-foto .negrito {\n  color: #FFFFFF;\n  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);\n}\n\n/* ---------- tipografia comum de bloco de texto ---------- */\n\n.header-bloco {\n  margin: 0 0 27px 0;\n  font-family: 'Baloo 2', sans-serif;\n  font-weight: 700;\n  font-size: 62px;\n  line-height: 1.1;\n}\n\n.paragrafo {\n  margin: 0 0 34px 0;\n  font-family: 'Baloo 2', sans-serif;\n  font-weight: 400;\n  font-size: 52px;\n  line-height: 1.15;\n}\n\n.paragrafo:last-child {\n  margin-bottom: 0;\n}\n\n.negrito {\n  margin: 13px 0 0 0;\n  font-family: 'Baloo 2', sans-serif;\n  font-weight: 700;\n  font-size: 52px;\n  line-height: 1.15;\n}\n\n/* ---------- destaque (slide 5): caixa sólida marrom-alaranjada atrás do parágrafo ---------- */\n\n.destaque-box {\n  display: block;\n  background-color: rgba(120, 66, 15, 0.82);\n  padding: 34px 42px;\n  box-sizing: border-box;\n  text-shadow: none;\n}",
+  "slides": [
+    {
+      "papel": "capa",
+      "notas": "headline em caixa alta, grotesca condensada branca com sombra, sobre foto de fazenda; âncora no terço superior; gradiente escuro no topo pra legibilidade",
+      "html": "<div class=\"slide slide-capa bg-01\" style=\"background-image: url('foto-01.jpg')\">\n  <div class=\"overlay-top\"></div>\n  <div class=\"headline-wrap\">\n    <h1 class=\"headline\">Reforma tributária cria imposto de 8,4% sobre o arrendamento de terra em 2026</h1>\n  </div>\n</div>"
+    },
+    {
+      "papel": "leitura corrida sobre fundo bege com vinco",
+      "notas": "dois parágrafos regulares seguidos de frase final em negrito, sem cabeçalho, bloco começa por volta de 22% do topo",
+      "html": "<div class=\"slide slide-paper\">\n  <div class=\"texto-paper\">\n    <p class=\"paragrafo\">Quem arrenda a terra e recebe o valor sempre teve uma preocupação só: o imposto de renda. Arrendamento nunca entrou na conta de imposto sobre consumo.</p>\n    <p class=\"paragrafo\">A partir de 2026 entra. O valor recebido passa a ser alcançado pelo IBS e pela CBS, os dois impostos novos da reforma.</p>\n    <p class=\"negrito\">O percentual cheio seria de 26,5%, mas o campo ficou com redução de 70%. Sobra 7,95%.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "foto com legenda",
+      "notas": "foto de campo de grama ao vento, cabeçalho em negrito \"Quem vai pagar:\" seguido de três parágrafos, bloco ancorado na base",
+      "html": "<div class=\"slide slide-foto bg-03\" style=\"background-image: url('foto-03.jpg')\">\n  <div class=\"overlay-bottom\"></div>\n  <div class=\"texto-foto\">\n    <div class=\"header-bloco\">Quem vai pagar:</div>\n    <p class=\"paragrafo\">A lei não pegou todo proprietário. A pessoa física só vira contribuinte se cumprir as duas condições ao mesmo tempo, olhando o ano anterior: passar de R$ 240 mil recebidos com arrendamento e ter mais de 3 imóveis arrendados.</p>\n    <p class=\"paragrafo\">São as duas juntas. Ficar abaixo de uma delas já basta pra ficar de fora.</p>\n    <p class=\"paragrafo\">E aqui aparece a primeira confusão do produtor: achar que arrendamento e parceria dão na mesma.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "leitura corrida sobre fundo bege com vinco",
+      "notas": "sem cabeçalho, dois blocos de parágrafo e frase final em negrito",
+      "html": "<div class=\"slide slide-paper\">\n  <div class=\"texto-paper\">\n    <p class=\"paragrafo\">No arrendamento, o proprietário entrega a terra e recebe um valor fixo, combinado no contrato.<br>Chova ou não chova, o valor é aquele.<br>A lei enxerga isso como aluguel da terra.</p>\n    <p class=\"paragrafo\">Na parceria, o proprietário entra com a terra e recebe conforme a produção. Safra boa, ele ganha mais.</p>\n    <p class=\"negrito\">Safra quebrada, ele perde junto. Divide o risco</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "foto com legenda em caixa de destaque",
+      "notas": "foto aérea de plantação, parágrafo único sobre caixa sólida marrom-alaranjada (marcador), sem cabeçalho",
+      "html": "<div class=\"slide slide-foto bg-05\" style=\"background-image: url('foto-05.jpg')\">\n  <div class=\"overlay-bottom\"></div>\n  <div class=\"texto-foto\">\n    <p class=\"paragrafo destaque-box\">Como a parceria é tratada como atividade rural, o imposto incide sobre o resultado, depois de descontar as despesas no livro-caixa. No arrendamento incide sobre o valor cheio que entrou, sem desconto nenhum. Numa empresa no lucro presumido, o arrendamento custa até 14,53%. A mesma terra em parceria custa até 6,73%.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "leitura corrida sobre fundo bege com vinco",
+      "notas": "sem cabeçalho, parágrafo longo com números e CTA final em negrito (\"Segue o perfil\")",
+      "html": "<div class=\"slide slide-paper\">\n  <div class=\"texto-paper\">\n    <p class=\"paragrafo\">Com o imposto novo, o CNPJ onde a terra está muda a conta de verdade. Em R$ 1 milhão de arrendamento por ano, a pessoa física no teto da tabela do imposto de renda chega a 35,45% de carga. A mesma receita dentro de uma empresa no lucro presumido fica em 16,43%.<br>Em reais: R$ 354.500 contra R$ 164.300 no mesmo ano.</p>\n    <p class=\"negrito\">Segue o perfil, que toda semana eu explico o que muda no bolso de quem tem terra.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "foto com legenda",
+      "notas": "foto de colheitadeira em milharal, cabeçalho em negrito \"O detalhe que pega:\" seguido de dois parágrafos, bloco ancorado na base",
+      "html": "<div class=\"slide slide-foto bg-07\" style=\"background-image: url('foto-07.jpg')\">\n  <div class=\"overlay-bottom\"></div>\n  <div class=\"texto-foto\">\n    <div class=\"header-bloco\">O detalhe que pega:</div>\n    <p class=\"paragrafo\">Quem recebe o arrendamento em saca vai sentir primeiro. Ao ser pago em grãos, o proprietário calcula os 7,95% pela cotação do produto e recolhe no dinheiro, antes de vender uma saca sequer.</p>\n    <p class=\"paragrafo\">E a operação passa a exigir nota fiscal, coisa que o arrendamento nunca teve.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "leitura corrida sobre fundo bege com vinco",
+      "notas": "cabeçalho em negrito \"O outro lado:\" no topo do bloco seguido de quatro parágrafos curtos espaçados, sem frase final em negrito",
+      "html": "<div class=\"slide slide-paper\">\n  <div class=\"texto-paper texto-paper--alto\">\n    <div class=\"header-bloco\">O outro lado:</div>\n    <p class=\"paragrafo\">Do lado de quem planta, o imposto pago no arrendamento vira crédito.</p>\n    <p class=\"paragrafo\">O arrendatário abate esse valor do que vai dever na venda da própria produção.</p>\n    <p class=\"paragrafo\">O custo continua no contrato, só troca de mão.</p>\n    <p class=\"paragrafo\">E é isso que vai reabrir a negociação de todo contrato longo de arrendamento no país.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "foto com legenda",
+      "notas": "foto de grão caindo em caçamba, sem cabeçalho, parágrafo único ancorado na base",
+      "html": "<div class=\"slide slide-foto bg-09\" style=\"background-image: url('foto-09.jpg')\">\n  <div class=\"overlay-bottom\"></div>\n  <div class=\"texto-foto\">\n    <p class=\"paragrafo\">A reforma mexeu em mais do que um percentual. Ela mudou o tipo de contrato que compensa assinar e o lugar onde a terra rende mais. Arrendamento ou parceria, pessoa física ou empresa: cada caminho agora tem uma conta própria, e ela não é a mesma pra todo produtor.</p>\n  </div>\n</div>"
+    },
+    {
+      "papel": "foto com legenda",
+      "notas": "foto de pessoa em ambiente interno, parágrafo seguido de CTA final em negrito (\"Comenta FAMÍLIA\"), bloco ancorado na base",
+      "html": "<div class=\"slide slide-foto bg-10\" style=\"background-image: url('foto-10.jpg')\">\n  <div class=\"overlay-bottom\"></div>\n  <div class=\"texto-foto\">\n    <p class=\"paragrafo\">Se você tem terra arrendada, 2026 é o ano de sentar com o contrato na mão antes que o imposto novo comece a correr.</p>\n    <p class=\"negrito\">Comenta FAMÍLIA aqui embaixo.</p>\n  </div>\n</div>"
+    }
+  ],
+  "ficha_visual": {
+    "formato": "4:5",
+    "fontes_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Bevan:wght@400;700&display=swap\" rel=\"stylesheet\">",
+    "tipografia": {
+      "titulo": {
+        "familia": "Bevan",
+        "peso": 700,
+        "caixa": "uppercase",
+        "tamanho_px": 74,
+        "entrelinha": 1.14,
+        "kerning_em": -0.01,
+        "alinhamento": "center"
+      },
+      "corpo": {
+        "familia": "Baloo 2",
+        "peso": 400,
+        "caixa": "none",
+        "tamanho_px": 40,
+        "entrelinha": 1.42,
+        "kerning_em": 0,
+        "alinhamento": "left"
+      },
+      "outras": [
+        {
+          "nome": "cabecalho-bloco",
+          "familia": "Baloo 2",
+          "peso": 700,
+          "caixa": "none",
+          "tamanho_px": 50,
+          "entrelinha": 1.2,
+          "kerning_em": 0,
+          "alinhamento": "left",
+          "uso": "linha de abertura em negrito dentro do bloco de texto, ex.: 'Quem vai pagar:', 'O detalhe que pega:', 'O outro lado:'"
+        },
+        {
+          "nome": "corpo-negrito",
+          "familia": "Baloo 2",
+          "peso": 700,
+          "caixa": "none",
+          "tamanho_px": 40,
+          "entrelinha": 1.3,
+          "kerning_em": 0,
+          "alinhamento": "left",
+          "uso": "última frase do bloco, sempre em negrito — fecha o raciocínio ou puxa CTA ('Segue o perfil...', 'Comenta FAMÍLIA...')"
+        }
+      ]
+    },
+    "cores": {
+      "fundo": "#E9E5E2",
+      "texto": "#464544",
+      "destaque": "#8B4F0F"
+    },
+    "tratamento_foto": "Foto full-bleed cobrindo o quadro inteiro (background-size cover, background-position center). Nos slides de capa e nos slides de foto-com-legenda existe um gradiente escuro sobreposto — no topo na capa (pra manter a headline branca legível contra o céu) e na base nos slides de legenda (transição de preto ~78% de opacidade até transparente, cobrindo por volta da metade inferior do quadro). Não há filtro de cor aplicado à foto em si (contraste e saturação já vêm da imagem original), nem textura de papel sobre foto — a textura de papel só existe nos slides de fundo claro.",
+    "moldura": {
+      "logo": false,
+      "contador": false,
+      "rodape": false,
+      "regua": false,
+      "tag": false,
+      "observacao": "Não existe nenhuma moldura de marca desenhada na peça. Setas, bolinhas de paginação e barra do Instagram vistas nos prints são interface do aplicativo, não fazem parte do design — foram descartadas."
+    },
+    "perfil": {
+      "existe": false,
+      "campos": [],
+      "onde": "não aparece em nenhum slide",
+      "observacao": "Não há bloco de identificação de perfil (avatar redondo + nome + @). O slide 6 e o slide 10 pedem 'Segue o perfil' e 'Comenta FAMÍLIA' em texto, mas isso é copy/CTA, não um bloco visual de perfil. O slide 10 mostra uma pessoa na FOTO (fotografia de conteúdo), não um avatar de identificação — não deve virar data-perfil."
+    },
+    "ancora": "Capa (slide 1): bloco de headline centralizado horizontalmente, começando a ~8% do topo e ocupando até ~30% da altura, largura ~91% do quadro (padding lateral ~4,5%). Slides de papel (2,4,6,8): bloco de texto alinhado à esquerda, largura ~82% do quadro (padding lateral 9%), começando a ~17-22% do topo quando não há cabeçalho, ou ~19% quando há cabeçalho em negrito antes do parágrafo; o bloco se estende até por volta de 70-85% da altura conforme o volume de texto. Slides de foto com legenda (3,5,7,9,10): bloco de texto ancorado na base, largura ~82% do quadro (padding lateral 9%), com margem inferior fixa de ~7% (respeitando a faixa onde o Instagram desenha as bolinhas de paginação), crescendo pra cima conforme o volume de texto — por isso o topo do bloco varia de slide pra slide (~54% a ~68% da altura).",
+    "observacoes": "Duas vozes tipográficas convivem: (1) a serifada slab pesada em caixa alta, só na capa, pra manchete de impacto; (2) a rounded sans (Baloo 2) pra tudo que é leitura corrida — parágrafo em peso regular e, ao final de cada bloco, uma frase em negrito que resume ou puxa ação. Fundo de 'papel' é textura sutil de vinco (crease horizontal e vertical) simulada em gradiente CSS, sem foto — cor de base bege-claro quase uniforme. No slide 5 (foto aérea) o parágrafo ganha uma caixa sólida marrom-alaranjada atrás do texto (tipo destaque/marcador), diferente do tratamento simples com apenas gradiente usado nos outros slides de foto — isso foi modelado como uma classe modificadora (.destaque-box) reaproveitável. Texto sobre foto é sempre branco com leve sombra pra legibilidade; texto sobre papel é cinza-chumbo quase preto, nunca preto puro."
+  },
+  "_fidelidade": {
+    "slides_na_referencia": 10,
+    "modo": "fiel",
+    "nota": "Pele extraída da referência: tipografia, cor, escala, âncora e moldura vêm do print. Numa peça modelada só muda texto e foto.",
+    "conferencia": [
+      {
+        "passe": 1,
+        "veredito": "Slides 2–10 batem em todos os eixos. Só o slide 1 (capa) estava fora: a headline usava `Bevan` em peso 700 (fonte slab larga, com bold sintético) ocupando ~38% do quadro em 5 linhas, contra uma grotesca condensada de ~18% do quadro em 3 linhas na referência — corrigi no `pele.css` trocando `.headline` para `Anton` peso 400 tamanho 48px, e ajustei `.headline-wrap` para as margens padrão de 97px (me"
+      },
+      {
+        "passe": 2,
+        "veredito": "Corrigido só o `pele.css` (slides.html não precisou mudar): (1) adicionei o `@import` do Google Fonts para Anton/Baloo 2 — a headline da capa estava caindo no sans-serif genérico do navegador porque a fonte declarada nunca era carregada; e (2) aumentei o corpo de texto (`.header-bloco`, `.paragrafo`, `.negrito`) de 40/50px com entrelinha solta (1.42/1.3/1.2) para 52/52/62px com entrelinha apertada"
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "titulo": "Scault — a origem do Kyreon",
+  "slides": [
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-top", "extra": "canto",
+        "grupos": [
+          {"fn": "vidro", "args": {"conteudo":
+            "<h1 class=\"s\">E se o comercial<br>pudesse ser operado<br><span class=\"acc\">por uma IA</span>?</h1><p>Como <b>900 parados num WhatsApp</b> nos fizeram criar isso…</p>"
+          }}
+        ]
+      }},
+      "fundo": {"fn": "foto", "args": {"arquivo": "foto-kyreon-sidney.png", "pos": "50% 0%", "cru": true}},
+      "classe": "on-cru", "rodape": "Arraste →", "logo": true
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri",
+        "grupos": [
+          {"fn": "rotulo", "args": {"texto": "Antes de tudo isso"}},
+          "<h2>Faz quase quatro anos que eu<br>faço marketing. E eu nunca<br>tinha <span class=\"acc\">operado o comercial</span>.</h2>",
+          "<p>Anúncio, conteúdo, funil, página. No negócio que eu abri com meu sócio, o comercial sempre foi dele. Nos clientes, eu entregava o contato e o que vinha depois <b>era problema de outro</b>.</p>"
+        ]
+      }},
+      "fundo": {"fn": "foto", "args": {"arquivo": "foto-marketing.jpg", "pos": "54% 42%", "rostos": [[55, 47, 22, 19]]}},
+      "classe": "on-img"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-split",
+        "grupos": [
+          "<div class=\"peak\">Eu montava<br>a máquina de<br>trazer gente</div>",
+          "<div class=\"lead\"><span class=\"acc\">e saía antes da parte<br>que dá dinheiro.</span></div>"
+        ]
+      }},
+      "fundo": "<div class=\"glow c\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>Aí me chamaram pra estruturar<br>a captação interna de um escritório<br>de advocacia, com demanda de massa.</h2>",
+          {"fn": "fluxo", "args": {"etapas": [["Anúncio", "Meta Ads"], ["Formulário", "Qualificação"], ["WhatsApp", "Atendimento"]]}},
+          "<p>Anúncio rodando, formulário de qualificação e o contato caindo direto no WhatsApp.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"mesh\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          {"fn": "rotulo", "args": {"texto": "O que eu encontrei chegando"}},
+          "<div class=\"peak\">900 leads.<br><span class=\"acc\">Zero venda.</span></div>",
+          "<p>O anúncio funcionou: novecentas pessoas preencheram o formulário e mandaram mensagem. Só não fecharam nenhum contrato. E os leads continuavam chegando — era <b>humanamente impossível</b> uma pessoa atender tudo.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"glow tl\"></div>"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>Ninguém ali tinha<br>experiência com comercial.</h2>",
+          {"fn": "ficha", "args": {"linhas": [
+            ["Tempo de resposta", "Demorado"],
+            ["Follow up", "Não existia"],
+            ["Script de atendimento", "Não existia"],
+            ["Técnica de venda", "Nenhuma"]
+          ]}},
+          "<p>Os contatos chegavam bem. Eles morriam depois.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"mesh lo\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "coluna", "args": {
+        "grupos": [
+          "<h1 class=\"s\">Então dessa vez<br>eu decidi fazer<br><span class=\"acc\">o comercial<br>eu mesmo</span>.</h1>",
+          "<p>Atender no WhatsApp, qualificar, receber documento, sentar na reunião de venda.</p>",
+          "<div class=\"lead\">Queria sentir na pele o que eu vinha entregando pros outros resolverem.</div>"
+        ],
+        "foto_html": {"fn": "foto", "args": {"arquivo": "foto-queda.jpg", "pos": "42% 52%"}}
+      }},
+      "classe": "on-img", "chrome": false
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>E aí eu descobri<br>o que é atender.</h2>",
+          {"fn": "chat", "args": {"mensagens": [
+            ["in", "Oi, vi o anúncio. Como funciona?", "07:12"],
+            ["in", "Consegue me passar o valor hoje?", "23:40"],
+            ["in", "Bom dia! Ainda dá tempo?", "SÁBADO · 15:03"]
+          ]}},
+          "<p>Mensagem às sete da manhã. Às onze da noite. No sábado, que é quando sobra tempo pra pessoa resolver a vida dela.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"glow tl\"></div>"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-split",
+        "grupos": [
+          "<h1 class=\"s\">Funcionava.<br>Mas só enquanto<br>eu aguentasse.</h1>",
+          "<p>Eu tinha outras frentes no mesmo dia e o volume não parava de crescer. Contratar alguém só pra isso, naquele momento, <b>estava fora da conta</b>.</p>"
+        ]
+      }},
+      "fundo": {"fn": "foto", "args": {"arquivo": "foto-limite.jpg", "pos": "50% 46%", "rostos": [[38, 32, 17, 15]]}},
+      "classe": "on-img"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>Então a gente montou um agente<br>de IA que <span class=\"acc\">só respondia</span>.</h2>",
+          {"fn": "mensagens", "args": {"cards": [
+            ["Carlos · 23:41", "Oi, respondi o formulário. Consegue me passar o valor?", false],
+            ["Agente · 23:41", "Oi, Carlos! Consigo sim. Só me confirma duas coisas e já te devolvo.", true],
+            ["Carlos · 23:43", "Perfeito, pode mandar.", false]
+          ]}},
+          "<p>Ligado direto no WhatsApp. Atendia na hora, tirava as dúvidas iniciais, qualificava, recebia o documento e agendava a reunião.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"mesh\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>E ele resolvia bem<br>a parte dele.</h2>",
+          {"fn": "ficha", "args": {"linhas": [
+            ["Resposta", "Na hora", true],
+            ["Qualificação", "Automática", true],
+            ["Documento", "Recebido", true],
+            ["Reunião", "Agendada na conversa", true]
+          ]}},
+          "<p class=\"kicker\">Por um tempo, pareceu que estava resolvido.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"glow c\"></div>"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-split",
+        "grupos": [
+          "<div class=\"peak\">O agente não<br>resolveu o problema.</div>",
+          "<div class=\"peak\"><span class=\"acc\">Ele aumentou.</span></div>"
+        ]
+      }},
+      "fundo": "<div class=\"glow c\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri",
+        "grupos": [
+          "<h2>Ele fazia uma coisa.<br>E comercial é várias.</h2>",
+          "<p>Respondendo na hora, mais gente avançava. Só que depois da resposta não tinha nada: ninguém voltava em quem sumiu, ninguém repescava o que esfriou, ninguém testava abordagem, ninguém olhava número.</p>",
+          "<div class=\"lead\">O gargalo não sumiu.<br><span class=\"acc\">Andou pra frente.</span></div>"
+        ]
+      }}
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<p class=\"kicker\">A pergunta que faltava</p><div class=\"rule g1\"></div>",
+          "<h1 class=\"s\">E se o agente fizesse<br>o processo inteiro?</h1>",
+          "<div class=\"lead\"><span class=\"acc\">Não só responder.</span></div>"
+        ]
+      }},
+      "fundo": "<div class=\"mesh lo\"></div><div class=\"glow c\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>Foi assim que nasceu<br>o <span class=\"acc\">Kyreon</span>.</h2>",
+          {"fn": "ui_kyreon_completo", "args": {}},
+          "<p>Cada conversa vira registro. Cada pessoa vira card. Cada dia vira número que dá pra olhar na tela.</p>"
+        ]
+      }},
+      "fundo": "<div class=\"mesh\"></div>", "classe": "panel"
+    },
+    {
+      "corpo": {"fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          {"wordmark": true},
+          "<div class=\"lead\">Hoje o Kyreon implanta um time<br>de agentes de IA que opera o seu<br>comercial <span class=\"acc\">de forma autônoma</span>.<br>O seu time só precisa supervisionar.</div>",
+          "<div class=\"btn\"><s></s>Saiba mais no link da bio</div>"
+        ]
+      }},
+      "fundo": "<div class=\"mesh wave\"></div><div class=\"glow b\"></div>",
+      "rodape": "Belém-PA e todo o Brasil"
+    }
+  ]
+}

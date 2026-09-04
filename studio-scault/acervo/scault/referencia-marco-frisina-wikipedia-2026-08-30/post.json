@@ -1,0 +1,282 @@
+{
+  "titulo": "Scault — Marco Frisina e a Schola Cantorum",
+  "slides": [
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "grupos": [
+            {
+              "texto": "Você provavelmente já cantou uma música dele — e nunca soube o nome.",
+              "destaque": [
+                "nunca soube o nome"
+              ],
+              "tag": "h1"
+            },
+            {
+              "texto": "A história por trás dos hinos que a Schola Cantorum canta toda semana.",
+              "tag": "p"
+            }
+          ]
+        }
+      },
+      "fundo": {
+        "fn": "foto",
+        "args": {
+          "arquivo": "foto-slide1.jpg",
+          "pos": "50% 35%"
+        }
+      },
+      "classe": "on-img capa",
+      "rodape": "Arraste →",
+      "logo": true
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "grupos": [
+            {
+              "fn": "rotulo",
+              "args": {
+                "texto": "Quem é Marco Frisina"
+              }
+            },
+            {
+              "texto": "Padre, maestro e compositor — um dos nomes mais cantados da Igreja sem que quase ninguém saiba.",
+              "destaque": [
+                "mais cantados da Igreja"
+              ],
+              "tag": "h2"
+            },
+            {
+              "texto": "Nascido em Roma, em 1954, Frisina uniu duas vocações desde jovem: o sacerdócio e a música. Formou-se em composição e regência, e hoje é uma das referências vivas da música sacra contemporânea.",
+              "tag": "p"
+            }
+          ]
+        }
+      },
+      "fundo": "<div class=\"mesh\"></div>",
+      "classe": "panel"
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "mid": true,
+          "grupos": [
+            {
+              "texto": "Ele escreve para o mundo inteiro cantar — e quase ninguém sabe seu nome.",
+              "destaque": [
+                "quase ninguém sabe seu nome"
+              ],
+              "tag": "h1",
+              "classe": "s"
+            },
+            {
+              "texto": "Frisina compôs trilhas para minisséries bíblicas, hinos oficiais de Jubileus e centenas de cânticos que abrem e fecham missas todos os domingos, em dezenas de países.",
+              "tag": "p"
+            }
+          ]
+        }
+      },
+      "logo": false
+    },
+    {
+      "corpo": {
+        "fn": "coluna",
+        "args": {
+          "grupos": [
+            {
+              "texto": "A trilha sonora da fé, escrita por um padre romano.",
+              "destaque": [
+                "escrita por um padre romano"
+              ],
+              "tag": "h1",
+              "classe": "s"
+            },
+            {
+              "texto": "Frisina assinou a trilha de minisséries bíblicas exibidas em dezenas de países — José do Egito, São Pedro, Maria Madalena — e se tornou uma das vozes mais reconhecíveis da música litúrgica moderna.",
+              "tag": "p"
+            },
+            {
+              "texto": "E boa parte dessa música chegou até nós.",
+              "tag": "div",
+              "classe": "lead"
+            }
+          ],
+          "foto_html": {
+            "fn": "foto",
+            "args": {
+              "arquivo": "foto-banco-3.jpg",
+              "pos": "60% 40%"
+            }
+          }
+        }
+      },
+      "classe": "on-img",
+      "chrome": false
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "grupos": [
+            {
+              "fn": "rotulo",
+              "args": {
+                "texto": "Os hinos que você já cantou"
+              }
+            },
+            {
+              "texto": "Su Ali D'Aquila. Resta Qui Con Noi. Emmanuel. Magnificat.",
+              "destaque": [
+                "Su Ali D'Aquila"
+              ],
+              "tag": "h2"
+            },
+            {
+              "texto": "Canções escritas por Frisina para as missas de Roma foram traduzidas, adaptadas e hoje fazem parte do repertório de corais e schola cantorums em todo o mundo — inclusive no Brasil.",
+              "tag": "p"
+            }
+          ]
+        }
+      },
+      "fundo": "<div class=\"mesh wave\"></div><div class=\"glow b\"></div>",
+      "classe": "panel"
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "mid": true,
+          "grupos": [
+            {
+              "texto": "E é exatamente isso que a Schola Cantorum faz.",
+              "destaque": [
+                "Schola Cantorum"
+              ],
+              "tag": "h1",
+              "classe": "s"
+            },
+            {
+              "texto": "Toda vez que entoamos um desses hinos, damos continuidade a uma tradição que atravessa países, décadas e idiomas.",
+              "tag": "p"
+            }
+          ]
+        }
+      },
+      "fundo": "<div class=\"glow\"></div>"
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "grupos": [
+            {
+              "fn": "rotulo",
+              "args": {
+                "texto": "Na prática"
+              }
+            },
+            {
+              "texto": "Cada hino tem seu lugar certo na missa — e isso também é herança de Frisina.",
+              "destaque": [
+                "herança de Frisina"
+              ],
+              "tag": "h2"
+            },
+            "<p class=\"lead\">Su Ali D'Aquila — Salmo 91, cantado nos momentos de confiança e entrega.<br>Resta Qui Con Noi — o convite da comunhão para ficar.<br>Emmanuel — hino do Jubileu, celebração e esperança.</p>"
+          ]
+        }
+      },
+      "fundo": "<div class=\"mesh\"></div>",
+      "classe": "panel"
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "grupos": [
+            {
+              "fn": "rotulo",
+              "args": {
+                "texto": "Do Vaticano às periferias"
+              }
+            },
+            {
+              "texto": "A música de Frisina não ficou presa a Roma — ela viajou.",
+              "destaque": [
+                "ela viajou"
+              ],
+              "tag": "h2"
+            },
+            {
+              "texto": "Hoje seus hinos são cantados em paróquias, seminários e schola cantorums espalhados pelo mundo — muitas vezes sem que ninguém saiba de onde vieram.",
+              "tag": "p"
+            }
+          ]
+        }
+      },
+      "fundo": {
+        "fn": "foto",
+        "args": {
+          "arquivo": "foto-banco-2.jpg",
+          "pos": "50% 50%",
+          "full": true
+        }
+      },
+      "classe": "on-img"
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "mid": true,
+          "grupos": [
+            {
+              "texto": "Cantar essas músicas é entrar numa conversa que começou antes da gente — e continua toda vez que abrimos a boca pra cantar.",
+              "destaque": [
+                "continua toda vez que abrimos a boca pra cantar"
+              ],
+              "tag": "div",
+              "classe": "lead"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "mid": true,
+          "grupos": [
+            {
+              "wordmark": true
+            },
+            {
+              "texto": "A história por trás de cada hino que você já cantou sem saber quem escreveu.",
+              "destaque": [
+                "sem saber quem escreveu"
+              ],
+              "tag": "div",
+              "classe": "lead"
+            },
+            "<div class=\"btn\"><s></s>Siga a Schola Cantorum</div>"
+          ]
+        }
+      },
+      "fundo": "<div class=\"mesh wave\"></div><div class=\"glow b\"></div>",
+      "rodape": "@scholacantorum"
+    }
+  ]
+}

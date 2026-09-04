@@ -1,0 +1,84 @@
+{
+  "titulo": "Template extraído — capa de manchete sobre foto escura (eixo centrado)",
+  "formato": "4:5",
+  "_extracao": {
+    "referencia": "_referencia-01.png",
+    "paleta_medida": [
+      {
+        "hex": "#000000",
+        "proporcao": 0.217
+      },
+      {
+        "hex": "#43463F",
+        "proporcao": 0.085
+      },
+      {
+        "hex": "#A89D99",
+        "proporcao": 0.074
+      },
+      {
+        "hex": "#220202",
+        "proporcao": 0.068
+      },
+      {
+        "hex": "#141813",
+        "proporcao": 0.063
+      },
+      {
+        "hex": "#020101",
+        "proporcao": 0.063
+      }
+    ],
+    "leitura": "Fundo dominado por preto e cinza-oliva escuro (foto de fachada + bandeira), com uma única mancha quente vermelha (#220202) concentrada no bloco de rótulo. Nenhum tom claro de base — a marca é escura. Cinza morno (#A89D99) é a foto tratada quase em cinza, não um creme.",
+    "grade": "capa cai em t-tri + .mid (eixo centrado). Três âncoras: rótulo/handle no topo, caixa de rótulo colorida no meio, manchete pesada na base. O miolo entre o handle e a caixa fica vazio de propósito.",
+    "foto": "full-bleed, sangrando o quadro inteiro, tratada quase em cinza (grayscale alto). Sujeito = fachada institucional + bandeira; serve de textura escura pro texto pousar, com .on-img (sombra de texto), sem véu preto.",
+    "ancora": "tudo centrado (.mid). É o slide de abertura/manifesto — pausa, não argumento.",
+    "escala": "três vozes: (1) caixa de rótulo em display pesado curtíssimo ('DECISÃO'), (2) manchete bold caixa-alta condensada em 4 linhas curtas com uma palavra sublinhada como destaque, (3) handle pequeno acima, peso de corpo.",
+    "regua": "sem .tick / sem régua visível na capa.",
+    "contador_rodape": "sem contador de slide. O @handle aparece como linha centrada logo abaixo do logo; nos demais slides vai pro rodapé padrão.",
+    "encaixe_no_vocabulario": "Capa = t-tri + .mid com fundo de foto sangrando, variação da 'capa' do estilo editorial (saída 'zoom ancorado' não é necessária porque a foto é fachada, não retrato). Nenhum layout novo — cabe em t-tri/.mid + regras de capa."
+  },
+  "_fidelidade": {
+    "slides_na_referencia": 1,
+    "nota": "Extraído de UMA imagem: é um post de imagem única, não um carrossel. O template tem exatamente os slides que a referência tinha — nada foi inventado."
+  },
+  "slides": [
+    {
+      "corpo": {
+        "fn": "grade",
+        "args": {
+          "modo": "t-tri",
+          "mid": true,
+          "grupos": [
+            {
+              "fn": "rotulo",
+              "args": {
+                "texto": "@perfil · categoria"
+              }
+            },
+            "<div class=\"btn\" style=\"pointer-events:none\">RÓTULO</div>",
+            {
+              "texto": "AFIRMAÇÃO CURTA EM QUATRO LINHAS COM UMA PALAVRA EM DESTAQUE, FECHA A CAPA",
+              "destaque": [
+                "EM DESTAQUE"
+              ],
+              "tag": "h1"
+            }
+          ]
+        }
+      },
+      "fundo": {
+        "fn": "foto",
+        "args": {
+          "arquivo": "foto-capa.jpg",
+          "pos": "50% 40%",
+          "full": true,
+          "tam": "cover"
+        }
+      },
+      "classe": "on-img capa",
+      "rodape": "",
+      "logo": true
+    }
+  ]
+}

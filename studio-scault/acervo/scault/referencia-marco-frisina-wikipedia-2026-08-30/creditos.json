@@ -1,0 +1,70 @@
+{
+  "fontes": [
+    {
+      "nome": "Pexels",
+      "licenca": "https://www.pexels.com/license/"
+    },
+    {
+      "nome": "Unsplash",
+      "licenca": "https://unsplash.com/license"
+    }
+  ],
+  "fotos": [
+    {
+      "arquivo": "foto-banco-1.jpg",
+      "fonte": "Pexels",
+      "id": "16035012",
+      "fotografo": "Arturo Añez.",
+      "fotografo_url": "https://www.pexels.com/@arturoaez225",
+      "url": "https://www.pexels.com/photo/old-geography-books-standing-on-blue-and-yellow-background-16035012/",
+      "alt": "A collection of vintage encyclopedia books arranged creatively on a vibrant blue and yellow background.",
+      "tamanho": "original",
+      "largura": 6000,
+      "altura": 4000,
+      "cor": "#5B663E",
+      "baixado_em": "2026-08-30"
+    },
+    {
+      "arquivo": "foto-banco-2.jpg",
+      "fonte": "Unsplash",
+      "id": "g_4HU3N0ysw",
+      "fotografo": "Manuel Palmeira",
+      "fotografo_url": "https://unsplash.com/@mpalmtree?utm_source=scaultos&utm_medium=referral",
+      "url": "https://unsplash.com/photos/a-cement-wall-with-graffiti-written-on-it-g_4HU3N0ysw?utm_source=scaultos&utm_medium=referral",
+      "alt": "a cement wall with graffiti written on it",
+      "tamanho": "original",
+      "largura": 4520,
+      "altura": 2992,
+      "cor": "#d9d9d9",
+      "baixado_em": "2026-08-30"
+    },
+    {
+      "arquivo": "foto-banco-3.jpg",
+      "fonte": "Pexels",
+      "id": "13745412",
+      "fotografo": "Arturo Añez.",
+      "fotografo_url": "https://www.pexels.com/@arturoaez225",
+      "url": "https://www.pexels.com/photo/a-stack-of-thick-books-on-white-surface-13745412/",
+      "alt": "A stack of old encyclopedias and dictionaries with copy space on a neutral background.",
+      "tamanho": "original",
+      "largura": 6000,
+      "altura": 4000,
+      "cor": "#887668",
+      "baixado_em": "2026-08-30"
+    },
+    {
+      "arquivo": "foto-slide1.jpg",
+      "fonte": "Pexels",
+      "id": "33728565",
+      "fotografo": "Masoud Mostafaei",
+      "fotografo_url": "https://www.pexels.com/@thisismasud",
+      "url": "https://www.pexels.com/photo/curved-railway-tracks-through-a-lush-forest-33728565/",
+      "alt": "Moody and mysterious railway track winding through a dense forest in autumn.",
+      "tamanho": "original",
+      "largura": 3873,
+      "altura": 5809,
+      "cor": "#423F38",
+      "baixado_em": "2026-08-31"
+    }
+  ]
+}

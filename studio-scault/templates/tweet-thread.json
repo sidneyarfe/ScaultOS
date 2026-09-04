@@ -1,0 +1,46 @@
+{
+  "tipo": "fiel",
+  "origem": "nativo do ScaultOS — formato tweet/thread do X, ver .claude/skills/carrossel/tweet-thread/TWEET-THREAD.md",
+  "formato": "4:5",
+  "fontes": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\">",
+  "css": "* { margin:0; padding:0; box-sizing:border-box; }\n\n.slide {\n  width: 1080px;\n  height: 1350px;\n  background: #000000;\n  font-family: 'Inter', sans-serif;\n  overflow: hidden;\n  position: relative;\n  padding: 100px 76px 0;\n}\n\n.header { display:flex; align-items:center; gap:27px; margin-bottom:52px; }\n.avatar { width:110px; height:110px; border-radius:50%; overflow:hidden; background:#2a3a4a; flex-shrink:0; }\n.avatar img { width:100%; height:100%; object-fit:cover; display:block; }\n.user-info { display:flex; flex-direction:column; gap:4px; }\n.name-row { display:flex; align-items:center; gap:10px; }\n.name { font-size:36px; font-weight:700; color:#E7E9EA; line-height:1.2; }\n.verified svg { width:31px; height:31px; display:block; flex-shrink:0; }\n.vpath { fill:#1D9BF0; }\n.handle { font-size:31px; color:#71767B; line-height:1.2; font-weight:400; }\n\n.content { font-size:46px; line-height:1.45; color:#E7E9EA; font-weight:400; letter-spacing:-0.01em; }\n.content p { margin:0 0 36px; }\n.content p:last-child { margin-bottom:0; }\n.content b { font-weight:700; }\n\n.post-image { margin-top:44px; width:100%; height:480px; border-radius:22px; overflow:hidden; border:1px solid #2F3E4E; background:#000; }\n.post-image img { width:100%; height:100%; display:block; object-fit:cover; object-position:center; }",
+  "slides": [
+    {
+      "papel": "gancho",
+      "notas": "abre a sequência sem revelar o conteúdo que vem depois; header com avatar/nome/@ da marca (data-perfil, preenchido pelo servidor) e uma foto de banco relacionada ao tema",
+      "html": "<div class=\"slide\" data-name=\"card-01\">\n  <div class=\"header\">\n    <div class=\"avatar\"><img data-perfil=\"avatar\" src=\"avatar.jpg\" alt=\"\"></div>\n    <div class=\"user-info\">\n      <div class=\"name-row\"><span class=\"name\" data-perfil=\"nome\">Nome da marca</span></div>\n      <span class=\"handle\" data-perfil=\"handle\">@marca</span>\n    </div>\n  </div>\n  <div class=\"content\">\n    <p>Você responde rápido no direct e mesmo assim perde gente pro concorrente?</p>\n    <p>Tem um motivo bem específico pra isso acontecer, e ele não tem nada a ver com velocidade de resposta.</p>\n  </div>\n  <div class=\"post-image\"><img src=\"foto-01.jpg\" alt=\"\"></div>\n</div>"
+    },
+    {
+      "papel": "valor",
+      "notas": "primeiro fato/mecanismo real do funil — entrega valor concreto, sem genérico, e fecha puxando pro próximo card com uma construção de frase diferente do gancho",
+      "html": "<div class=\"slide\" data-name=\"card-02\">\n  <div class=\"header\">\n    <div class=\"avatar\"><img data-perfil=\"avatar\" src=\"avatar.jpg\" alt=\"\"></div>\n    <div class=\"user-info\">\n      <div class=\"name-row\"><span class=\"name\" data-perfil=\"nome\">Nome da marca</span></div>\n      <span class=\"handle\" data-perfil=\"handle\">@marca</span>\n    </div>\n  </div>\n  <div class=\"content\">\n    <p>O problema não é o \"quando\" você responde. É o \"com o quê\".</p>\n    <p>Mensagem padrão, copiada e colada, entrega a mesma coisa que um robô entregaria de graça — e quem está do outro lado sente isso na hora.</p>\n  </div>\n  <div class=\"post-image\"><img src=\"foto-02.jpg\" alt=\"\"></div>\n</div>"
+    },
+    {
+      "papel": "ponte",
+      "notas": "penúltimo card: fecha o valor e abre caminho pro CTA — é aqui que entra a foto mais autêntica/de marca (fachada, produto, equipe), reservada pra este momento",
+      "html": "<div class=\"slide\" data-name=\"card-03\">\n  <div class=\"header\">\n    <div class=\"avatar\"><img data-perfil=\"avatar\" src=\"avatar.jpg\" alt=\"\"></div>\n    <div class=\"user-info\">\n      <div class=\"name-row\"><span class=\"name\" data-perfil=\"nome\">Nome da marca</span></div>\n      <span class=\"handle\" data-perfil=\"handle\">@marca</span>\n    </div>\n  </div>\n  <div class=\"content\">\n    <p>Isso muda quando a resposta cita o que a pessoa perguntou de verdade, não um roteiro fixo.</p>\n    <p><b>Foi assim que a equipe passou a fechar mais conversa direto no direct</b>, sem depender de anúncio pra puxar venda.</p>\n  </div>\n  <div class=\"post-image\"><img src=\"foto-03.jpg\" alt=\"\"></div>\n</div>"
+    },
+    {
+      "papel": "cta",
+      "notas": "último card: apresenta a marca do zero (público frio) e convida a agir — sem preço. Sem gancho pro próximo (é o fim da linha) e sem imagem, pra concentrar atenção no convite",
+      "html": "<div class=\"slide\" data-name=\"card-04\">\n  <div class=\"header\">\n    <div class=\"avatar\"><img data-perfil=\"avatar\" src=\"avatar.jpg\" alt=\"\"></div>\n    <div class=\"user-info\">\n      <div class=\"name-row\"><span class=\"name\" data-perfil=\"nome\">Nome da marca</span></div>\n      <span class=\"handle\" data-perfil=\"handle\">@marca</span>\n    </div>\n  </div>\n  <div class=\"content\">\n    <p>A gente ajuda negócio local a transformar mensagem direta em cliente de verdade.</p>\n    <p>Manda um \"oi\" no direct que a gente mostra como.</p>\n  </div>\n</div>"
+    }
+  ],
+  "ficha_visual": {
+    "formato": "4:5",
+    "fontes_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\">",
+    "tipografia": {
+      "titulo": { "familia": "Inter", "peso": 700, "caixa": "none", "tamanho_px": 36, "entrelinha": 1.2, "kerning_em": 0, "alinhamento": "left", "uso": "nome do autor no header" },
+      "corpo": { "familia": "Inter", "peso": 400, "caixa": "none", "tamanho_px": 46, "entrelinha": 1.45, "kerning_em": -0.01, "alinhamento": "left" },
+      "outras": [
+        { "nome": "handle", "familia": "Inter", "peso": 400, "caixa": "none", "tamanho_px": 31, "entrelinha": 1.2, "kerning_em": 0, "alinhamento": "left", "uso": "@handle abaixo do nome" }
+      ]
+    },
+    "cores": { "fundo": "#000000", "texto": "#E7E9EA", "destaque": "#1D9BF0" },
+    "tratamento_foto": "Foto full-width dentro do card, altura fixa de 480px (object-fit:cover) — nunca estica o card. Sem overlay, sem filtro: a foto entra crua, como um anexo de post real.",
+    "moldura": { "logo": false, "contador": false, "rodape": false, "regua": false, "tag": false, "observacao": "Sem moldura de marca nenhuma — o card imita um print real do X, que não tem logo, contador nem régua." },
+    "perfil": { "existe": true, "campos": ["avatar", "nome", "handle"], "onde": "topo de todo card (header)", "observacao": "Única porta de entrada da marca na peça — preenchida pelo servidor via data-perfil, o agente não escreve nome/@ do cliente." },
+    "ancora": "Header fixo a 100px do topo (avatar 110px + nome/@ ao lado). Bloco de texto logo abaixo, largura total menos padding lateral de 76px. Imagem (quando houver) 44px abaixo do texto, altura fixa 480px.",
+    "observacoes": "Modo escuro (padrão do X) — fundo preto sólido, texto quase branco, @ em cinza médio, sem gradiente nem textura. Sequência de 4 cards no arco de funil: gancho → valor → ponte (foto real de marca) → CTA que apresenta a marca do zero. Ver checklist completo em tweet-thread/TWEET-THREAD.md antes de escrever o conteúdo novo."
+  }
+}

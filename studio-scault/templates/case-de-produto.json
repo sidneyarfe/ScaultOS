@@ -1,0 +1,64 @@
+{
+  "origem": "template-semente",
+  "salvo_em": "2026-08-31",
+  "slides": [
+    {
+      "classe": "on-cru",
+      "rodape": "Arraste →",
+      "logo": true,
+      "fundo": { "fn": "foto", "args": { "arquivo": "(substituir por foto real)", "pos": "50% 0%", "cru": true } },
+      "corpo": { "fn": "grade", "args": {
+        "modo": "t-top", "extra": "canto",
+        "grupos": [
+          { "fn": "vidro", "args": { "conteudo": "<h1 class=\"s\">Como resolvemos<br>um problema<br><span class=\"acc\">real</span>.</h1><p>O caso que vamos contar neste carrossel.</p>" } }
+        ]
+      }}
+    },
+    {
+      "classe": "panel",
+      "fundo": "<div class=\"mesh\"></div>",
+      "corpo": { "fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          { "fn": "rotulo", "args": { "texto": "O problema" } },
+          "<h2>O que estava acontecendo<br>antes da solução.</h2>",
+          "<p>O contexto que qualquer leitor no mesmo lugar reconhece.</p>"
+        ]
+      }}
+    },
+    {
+      "corpo": { "fn": "grade", "args": {
+        "modo": "t-split",
+        "grupos": [
+          "<div class=\"peak\">A virada<br><span class=\"acc\">que mudou tudo.</span></div>",
+          "<div class=\"lead\">Uma frase que resume a decisão.</div>"
+        ]
+      }},
+      "fundo": "<div class=\"glow c\"></div>", "classe": "panel"
+    },
+    {
+      "fundo": "<div class=\"mesh\"></div>",
+      "classe": "panel",
+      "corpo": { "fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          "<h2>Como o produto<br>resolve isso.</h2>",
+          { "fn": "fluxo", "args": { "etapas": [["Etapa 1", "O que acontece"], ["Etapa 2", "O que acontece"], ["Etapa 3", "O que acontece"]] } },
+          "<p>Uma frase que fecha o mecanismo.</p>"
+        ]
+      }}
+    },
+    {
+      "rodape": "Belém-PA e todo o Brasil",
+      "fundo": "<div class=\"mesh wave\"></div><div class=\"glow b\"></div>",
+      "corpo": { "fn": "grade", "args": {
+        "modo": "t-tri", "mid": true,
+        "grupos": [
+          { "wordmark": true },
+          "<div class=\"lead\">A frase que resume o resultado.<br><span class=\"acc\">Em duas linhas.</span></div>",
+          "<div class=\"btn\"><s></s>Saiba mais no link da bio</div>"
+        ]
+      }}
+    }
+  ]
+}
