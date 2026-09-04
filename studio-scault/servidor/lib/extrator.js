@@ -7,7 +7,7 @@
 // no motor genérico, o template ainda era degradado a uma frase de prompt
 // ("use como referência de arco narrativo, não de HTML/CSS").
 //
-// Resultado prático, visto na peça do Dias Advogados de 31/08/2026: a
+// Resultado prático, visto numa peça de cliente: a
 // referência era foto cheia + headline em serif condensada, caixa alta, sem
 // moldura nenhuma; a peça saiu em Inter, com kicker de kerning aberto, régua,
 // logo no topo e @handle no rodapé. "Semelhante", não igual — e o Sidney foi

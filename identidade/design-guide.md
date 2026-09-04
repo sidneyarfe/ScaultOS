@@ -22,8 +22,8 @@ Existiam dois brandbooks divergentes na pasta `identidade/`:
 | Display | PP Neue Montreal | Inter Tight |
 
 O site foi construído sobre o segundo — o CSS de `site/index.html` declara
-`Tokens: identidade/scault-design-system.md` — e as propostas do Estúdio Mandril
-seguiram o mesmo sistema. O bronze champagne sai da marca.
+`Tokens: identidade/scault-design-system.md` — e as propostas comerciais
+seguem o mesmo sistema. O bronze champagne sai da marca.
 
 ---
 
