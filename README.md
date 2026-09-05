@@ -20,7 +20,7 @@ Dois caminhos. Escolhe o que combina contigo.
 Abre o Claude Code em qualquer pasta e cola:
 
 ```
-Clona o <URL do teu repositório ScaultOS> na pasta atual,
+Clona o https://github.com/sidneyarfe/ScaultOS.git na pasta atual,
 entra nela e roda o /instalar.
 ```
 
@@ -30,7 +30,7 @@ só responde.
 ### Pelo terminal (mais previsível)
 
 ```
-git clone <URL do teu repositório ScaultOS>
+git clone https://github.com/sidneyarfe/ScaultOS.git
 cd ScaultOS
 code .
 ```
